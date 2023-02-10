@@ -30,6 +30,8 @@
 								 // before giving up. Also determines lines for diag dump
 #define VED_BAUD_RATE 19200
 
+// https://github.com/SignalK/vedirect-serial-usb/blob/master/lib/fields.js
+
 // Extend this and ved_labels[] for needed inclusions
 enum VE_DIRECT_DATA {
 	VE_DUMP = 0,
@@ -38,6 +40,7 @@ enum VE_DIRECT_DATA {
 	VE_POWER,
 	VE_CURRENT,
 	VE_ALARM,
+	VE_VOLTAGE_STARTER,
 	VE_LAST_LABEL,
 };
 
@@ -48,6 +51,7 @@ const char ved_labels[VE_LAST_LABEL][VED_MAX_LEBEL_SIZE] PROGMEM = {
 		"P",
 		"I",
 		"Alarm",
+		"VS"
 };
 
 class VEDirect {
