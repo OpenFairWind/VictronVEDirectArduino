@@ -41,6 +41,8 @@ enum VE_DIRECT_DATA {
 	VE_CURRENT,
 	VE_ALARM,
 	VE_VOLTAGE_STARTER,
+	VE_PANEL_VOLTAGE,
+	VE_PANEL_POWER,
 	VE_LAST_LABEL,
 };
 
@@ -51,7 +53,9 @@ const char ved_labels[VE_LAST_LABEL][VED_MAX_LEBEL_SIZE] PROGMEM = {
 		"P",
 		"I",
 		"Alarm",
-		"VS"
+		"VS",
+		"VPV",
+		"PPV"
 };
 
 class VEDirect {
