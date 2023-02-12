@@ -26,9 +26,9 @@ VEDirect::~VEDirect() {
 	// virtual destructor
 }
 
-uint8_t VEDirect::begin(uint8_t rxPin, uint8_t txPin) {
+uint8_t VEDirect::begin() {
 	// Check connection the serial port
-	VESerial.begin(19200, SERIAL_8N1, rxPin, txPin);
+	VESerial.begin(VED_BAUD_RATE);
 	if (VESerial) {
 		delay(500);
 		if(VESerial.available()) {
@@ -40,7 +40,7 @@ uint8_t VEDirect::begin(uint8_t rxPin, uint8_t txPin) {
 	return 0;
 }
 
-int32_t VEDirect::read(uint8_t target) {
+int32_t VEDirect::read(uint8_t target, int8_t rxPin) {
 	// Read VE.Direct lines from the serial port
 	// Search for the label specified by enum target
 	// Extract and return the corresponding value
@@ -56,7 +56,9 @@ int32_t VEDirect::read(uint8_t target) {
 	int8_t b;							// byte read from the stream
 
 	VESerial.begin(VED_BAUD_RATE);
-
+	
+	VESerial.setPins(rxPin,-1,-1,-1);
+	
 	while (lines > 0) {
 		if (VESerial.available()) {
 			while (loops > 0) {
