@@ -64,7 +64,7 @@ class VEDirect {
 public:
 	VEDirect(HardwareSerial& port);
 	virtual ~VEDirect();
-	uint8_t begin();
+	uint8_t begin(int8_t rxPin = -1);
 	int32_t read(uint8_t target, int8_t rxPin = -1);
 	void copy_raw_to_serial0(); // kept for backwards compatibility
 private:
