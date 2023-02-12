@@ -30,6 +30,8 @@
 								 // before giving up. Also determines lines for diag dump
 #define VED_BAUD_RATE 19200
 
+#define VED_NODATA -2147483648
+
 // https://github.com/SignalK/vedirect-serial-usb/blob/master/lib/fields.js
 
 // Extend this and ved_labels[] for needed inclusions
