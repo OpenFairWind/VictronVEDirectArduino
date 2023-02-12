@@ -26,7 +26,7 @@ VEDirect::~VEDirect() {
 	// virtual destructor
 }
 
-uint8_t VEDirect::begin() {
+uint8_t VEDirect::begin(uint8_t rxPin, uint8_t txPin) {
 	// Check connection the serial port
 	VESerial.begin(19200);
 	if (VESerial) {
@@ -37,6 +37,7 @@ uint8_t VEDirect::begin() {
 			return 1;
 		}
 	}
+	VESerial.setPins(rxPinsì,txPin,-1,-1);
 	return 0;
 }
 
