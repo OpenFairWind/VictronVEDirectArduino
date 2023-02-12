@@ -26,9 +26,12 @@ VEDirect::~VEDirect() {
 	// virtual destructor
 }
 
-uint8_t VEDirect::begin() {
+uint8_t VEDirect::begin(int8_t rxPin = -1) {
 	// Check connection the serial port
 	VESerial.begin(VED_BAUD_RATE);
+	
+	VESerial.setPins(rxPin,-1,-1,-1);
+	
 	if (VESerial) {
 		delay(500);
 		if(VESerial.available()) {
