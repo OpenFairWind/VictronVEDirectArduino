@@ -37,7 +37,7 @@ uint8_t VEDirect::begin(uint8_t rxPin, uint8_t txPin) {
 			return 1;
 		}
 	}
-	VESerial.setPins(rxPinsì,txPin,-1,-1);
+	VESerial.setPins(rxPin,txPin,-1,-1);
 	return 0;
 }
 
