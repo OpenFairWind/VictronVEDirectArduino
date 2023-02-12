@@ -28,7 +28,7 @@ VEDirect::~VEDirect() {
 
 uint8_t VEDirect::begin(uint8_t rxPin, uint8_t txPin) {
 	// Check connection the serial port
-	VESerial.begin(19200);
+	VESerial.begin(19200, SERIAL_8N1, rxPin, txPin);
 	if (VESerial) {
 		delay(500);
 		if(VESerial.available()) {
@@ -37,7 +37,6 @@ uint8_t VEDirect::begin(uint8_t rxPin, uint8_t txPin) {
 			return 1;
 		}
 	}
-	VESerial.setPins(rxPin,txPin,-1,-1);
 	return 0;
 }
 
