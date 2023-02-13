@@ -24,7 +24,7 @@
 
 // Tunable parameters - defaults tested on mega2560 R3
 #define VED_LINE_SIZE 30		 // Seems to be plenty. VE.Direct protocol could change
-#define VED_MAX_LEBEL_SIZE 6	 // Max length of all labels of interest + '\0'. See ved_labels[]
+#define VED_MAX_LEBEL_SIZE 9	 // Max length of all labels of interest + '\0'. See ved_labels[]
 #define VED_MAX_READ_LOOPS 60000 // How many read loops to be considered a read time-out
 #define VED_MAX_READ_LINES 50	 // How many lines to read looking for a value
 								 // before giving up. Also determines lines for diag dump
